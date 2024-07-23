@@ -164,7 +164,6 @@ ORDER BY
 	cp.payroll_quarter ,
 	cp.industry_branch_code 
 ;
--- DROP TABLE mt_payroll ;
 SELECT * FROM mt_payroll ;
 
 -- TABULKA CEN POTRAVIN V ČR
@@ -278,7 +277,6 @@ LEFT JOIN czechia_region cr
 WHERE cp.category_code != 2000001 AND cp.region_code IS NULL
 ORDER BY cpc.name DESC, cp.date_from ASC
 ;
--- DROP TABLE mt_prices ;
 SELECT * FROM mt_prices mp ;
 
 SELECT YEAR(date_start) 
@@ -302,7 +300,6 @@ SELECT
 FROM mt_prices 
 GROUP BY category_code , category_name , price_value , price_unit , YEAR(date_start);
 SELECT * FROM mt_prices2;
--- DROP TABLE mt_prices2 ;
 
 SELECT
 	category_name ,
@@ -342,7 +339,6 @@ GROUP BY
 	branch_name
 ;
 SELECT * FROM mt_payroll2;
--- DROP TABLE mt_payroll2 ;
 
 -- TABULKA MEZD A POTRAVIN V ČR (kombinace dvou výše)
 SELECT count(*) FROM mt_prices2 mp 
@@ -374,7 +370,6 @@ LEFT JOIN mt_payroll2 mp2
 	ON mp.`year` = mp2.`year` ;
 
 SELECT * FROM t_Michal_Titl_project_SQL_primary_final;
--- DROP TABLE t_Michal_Titl_project_SQL_primary_final;
 
 -- TABULKA DODATEČNÝCH DAT PRO DALŠÍ EVROPSKÉ ZEMĚ VE STEJNÉM OBDOBÍ
 
@@ -433,8 +428,3 @@ GROUP BY `year`
 SELECT * FROM t_Michal_Titl_project_SQL_secondary_final
 	WHERE gini IS NULL OR  taxes IS NULL OR fertility IS NULL OR mortaliy_under5 IS NULL 
 ;
-
-DROP TABLE mt_payroll ;
-DROP TABLE mt_payroll2 ;
-DROP TABLE mt_prices ;
-DROP TABLE mt_prices2 ;

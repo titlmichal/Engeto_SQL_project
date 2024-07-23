@@ -409,7 +409,3 @@ FROM base_table_1 bt1
 	LEFT JOIN base_table_2 bt22
 		ON bt1.`year` = bt22.`year` + 1
 ORDER BY bt1.`year`;
-
-
--- DROP TABLE base_table_1;
--- DROP TABLE base_table_2;
